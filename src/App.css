@@ -1,6 +1,8 @@
 body {
+  width: 100vw;
 	height: 100vh;
 	overflow-y: hidden;
+  font-family: "Pacifico", cursive;
   background-color: #edeee9;
 	margin: 0;
 	padding: 0;
@@ -9,13 +11,14 @@ body {
 	align-items: center;
 }
 #root {
+  width: 100%;
 	display: flex;
 	justify-content: start;
 	align-items: center;
 }
 nav {
 	width: 120px;
-	height: calc(95vh - 40px);
+	height: calc(96vh - 40px);
 	background-color: #3e2522;
 	border-radius: 8px;
 	padding: 20px;
@@ -26,7 +29,7 @@ nav {
 	align-items: center;
 }
 nav a {
-	color: #edeee9;
+	color: #ffffff;
 	text-decoration: none;
 	margin: 10px 0;
 	transition: all 0.3s ease;

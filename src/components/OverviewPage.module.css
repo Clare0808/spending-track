@@ -1,0 +1,122 @@
+.page {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-rows: calc(6% - 10px) 47%, calc(47% - 20px);
+}
+.pageTitle {
+	color: #3e2522;
+	font-size: 24px;
+	text-align: left;
+	padding-left: 40px;
+	margin-bottom: 10px;
+}
+.eleFrameInfo {
+	padding: 0 20px;
+	display: grid;
+	grid-template-columns: 60% 40%;
+	justify-content: center;
+	align-items: center;
+}
+.boxOutframe {
+	width: 100%;
+}
+.infoBox {
+	width: calc(100% - 60px);
+	height: calc(100% - 20px);
+  background-color: #ffffff;
+	border-radius: 8px;
+	margin: 0 10px;
+	padding: 20px;
+}
+.infoBoxTitle,
+.infoBoxTime {
+	color: #adadad;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+.infoBoxTime {
+	text-align: right;
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+.infoBoxContent {
+	color: #3e2522;
+	font-size: 30px;
+	font-weight: bold;
+}
+.boxFrame {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.chartFrame {
+	height: 100%;
+	background-color: #ffffff;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.chartTitle {
+	color: #adadad;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+.pieChart {
+	width: 260px;
+}
+.eleFrameSpending {
+	padding: 0 20px;
+	margin-top: 20px;
+	display: grid;
+	grid-template-columns: 40% 60%;
+	justify-content: center;
+	align-items: center;
+}
+.spending {
+	width: calc(100% - 60px);
+	height: calc(100% - 40px);
+	background-color: #ffffff;
+	border-radius: 8px;
+	margin: 0 10px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.spendingOutframe {
+	width: 90%;
+	text-align: left;
+	margin: 10px 0;
+	display: grid;
+	grid-template-columns: 75% 25%;
+	justify-content: start;
+	align-items: center;
+}
+.spendingBox {
+	width: 100%;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+.icon {
+	color: #3e2522;
+	font-size: 30px;
+	margin-right: 20px;
+}
+.spendingTitle,
+.spendingPrice {
+	color: #3e2522;
+	font-size: 24px;
+}
+.spendingTime {
+	color: #adadad;
+	margin-top: 10px;
+}
+.lineChart {
+	width: 500px;
+}
