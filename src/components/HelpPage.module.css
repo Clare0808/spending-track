@@ -1,0 +1,110 @@
+.page {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-rows: repeat(2, 50%);
+	align-items: center;
+	position: relative;
+}
+.problemFrame,
+.contactFrame {
+	width: calc(100% - 70px);
+	background-color: #ffffff;
+	border-radius: 12px;
+	margin: 10px 0;
+	margin-left: 20px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+}
+.title {
+	width: 100%;
+	color: #adadad;
+	font-size: 26px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.Frame,
+.cFrame {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 40% 60%;
+	justify-content: center;
+	align-items: start;
+}
+.cFrame {
+	grid-template-columns: 60% 40%;
+}
+.problemInFrame,
+.contactInFrame {
+	width: 100%;
+	height: 180px;
+	max-height: 180px;
+	overflow-y: auto;
+	border-right: 6px dotted #3e2522;
+	padding-top: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+}
+.contactInFrame {
+	border: none;
+}
+.problemBox,
+.contactBox {
+	width: 100%;
+	color: #3e2522;
+	font-size: 22px;
+	border-radius: 12px;
+	margin-bottom: 10px;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.3s ease;
+}
+.problemBox:hover,
+.contactBox:hover {
+	color: #ffffff;
+	background-color: #d3a376;
+	cursor: pointer;
+}
+.answerFrame,
+.contactAnswerFrame {
+	color: #3e2522;
+	font-size: 22px;
+	padding-left: 20px;
+	display: flex;
+	justify-content: start;
+	align-items: start;
+}
+.contactAnswerFrame {
+	height: 220px;
+	border-right: 6px dotted #3e2522;
+	padding-left: 0px;
+}
+.robotFrame {
+	width: 65px;
+	height: 65px;
+	background-color: #3e2522;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	transition: all 0.3s ease;
+}
+.robotIcon {
+	color: #ffffff;
+	font-size: 32px;
+	text-align: center;
+	line-height: 65px;
+}
+.robotFrame:hover {
+	background-color: #d3a376;
+	cursor: pointer;
+}

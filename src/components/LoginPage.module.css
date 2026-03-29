@@ -1,0 +1,128 @@
+.page {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.title {
+  color: #3e2522;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.frame {
+	width: calc(100% - 80px);
+	background-color: #ffffff;
+  border: 1px solid #3e2522;
+  border-radius: 12px;
+	margin-left: 20px;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	align-items: center;
+}
+.funcBox {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.inputFrame {
+  width: 100%;
+  margin: 10px 0;
+}
+.inputFrameMix {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 10px));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.secTitle {
+  font-size: 22px;
+  text-align: start;
+  margin: 5px 0;
+}
+.input {
+  width: 100%;
+  height: 20px;
+  font-size: 16px;
+  font-family: "Pacifico", cursive;
+  border: 1px solid #ffffff;
+  border-bottom: 1px solid #3e2522;
+}
+.input:focus {
+  outline: none;
+  border-bottom: 1px solid #d3a376;
+}
+.btnFrame {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.localBtnFrame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signUpBtn,
+.loginBtn {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 20px;
+  margin: 0px 20px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+.signUpBtn {
+  color: #3e2522;
+  border: 1px solid #3e2522;
+}
+.signUpBtn:hover {
+  color: #ffffff;
+  background-color: #d3a376;
+  border: 1px solid #d3a376;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.loginBtn {
+  color: #ffffff;
+  background-color: #3e2522;
+}
+.loginBtn:hover {
+  color: #ffffff;
+  background-color: #d3a376;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.text {
+  color: #d0d0d0;
+  font-size: 18px;
+  margin: 10px 0;
+}
+.googleBtn {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.googleImg {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+}
+.google {
+  font-family: "Segoe UI", Arial;
+  margin: 0 5px;
+}
+.googleBtn:hover {
+  cursor: pointer;
+}
