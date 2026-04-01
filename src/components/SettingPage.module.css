@@ -1,0 +1,169 @@
+.page {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-rows: calc(40% - 10px), calc(60% - 10px);
+	gap: 20px;
+}
+.userInfoFrame {
+	display: grid;
+	grid-template-columns: 270px calc(100% - 290px);
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+}
+.img {
+	width: 250px;
+	height: 250px;
+	border-radius: 12px;
+	margin-left: 20px;
+}
+.infoFrame {
+	width: calc(100% - 60px);
+	height: calc(145px - 50px);
+	background-color: #ffffff;
+	border-radius: 12px;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+.infoBox {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+.infoName,
+.infoData {
+	color: #3e2522;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.infoName {
+	font-size: 22px;
+	border-bottom: 1px solid #3e2522;
+	padding-bottom: 10px;
+}
+.infoTitle,
+.otherDataTitle,
+.manageTitle {
+	color: #adadad;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+.infoTitle {
+	width: 80px;
+}
+.otherDataOutFrame {
+	display: grid;
+	grid-template-columns: repeat(2, calc(50% - 10px));
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+}
+.otherDataFrame {
+	width: calc(100% - 60px);
+	height: calc(105px - 50px);
+	background-color: #ffffff;
+	border-radius: 12px;
+	padding: 20px;
+}
+.otherData,
+.budget,
+.remindTime {
+	color: #3e2522;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+}
+.dataManageFrame {
+	margin-left: 20px;
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	justify-content: center;
+	align-items: center;
+}
+.labelManageFrame {
+	width: calc(100% - 60px);
+	height: calc(100% - 40px);
+	background-color: #ffffff;
+	border-radius: 12px;
+	padding: 20px;
+}
+.optionFrame {
+	width: 100%;
+	height: 300px;
+	max-height: 300px;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+.option {
+	width: calc(80% - 20px);
+	color: #3e2522;
+	font-size: 18px;
+	text-align: center;
+	border: 1px solid #3e2522;
+	border-radius: 12px;
+	margin-bottom: 10px;
+	padding: 10px;
+	transition: all 0.3s ease;
+}
+.option:hover {
+	color: #ffffff;
+	background-color: #d3a376;
+	border-color: #d3a376;
+	cursor: pointer;
+	transform: scale(1.1);
+}
+.optionIcon {
+	color: #3e2522;
+	font-size: 18px;
+	margin-right: 5px;
+}
+.option:hover .optionIcon {
+	color: #ffffff;
+	cursor: pointer;
+}
+.settingBox {
+	width: calc(100% - 60px);
+	height: 100%;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: repeat(2, calc(50% - 10px));
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+}
+.budgetManage,
+.remindBox {
+	width: 100%;
+	height: calc(100% - 40px);
+	background-color: #ffffff;
+	border-radius: 12px;
+	padding: 20px;
+	position: relative;
+}
+.budgetModifyBtn,
+.timeModifyBtn {
+	width: 150px;
+	color: #3e2522;
+	font-size: 18px;
+	text-align: center;
+	border: 1px solid #3e2522;
+	border-radius: 12px;
+	padding: 10px;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	transition: all 0.3s ease;
+}
+.budgetModifyBtn:hover,
+.timeModifyBtn:hover {
+	color: #ffffff;
+	background-color: #d3a376;
+	border-color: #d3a376;
+	cursor: pointer;
+	transform: scale(1.1);
+}
