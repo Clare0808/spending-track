@@ -1,0 +1,30 @@
+.spendingOutframe {
+	width: 100%;
+	text-align: left;
+	margin: 10px 0;
+	display: grid;
+	grid-template-columns: 75% 25%;
+	justify-content: start;
+	align-items: center;
+}
+.spendingBox {
+	width: 100%;
+	margin-left: 20px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+.icon {
+	color: #3e2522;
+	font-size: 30px;
+	margin-right: 20px;
+}
+.spendingTitle,
+.spendingPrice {
+	color: #3e2522;
+	font-size: 24px;
+}
+.spendingTime {
+	color: #adadad;
+	margin-top: 10px;
+}

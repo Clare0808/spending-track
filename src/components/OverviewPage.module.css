@@ -24,7 +24,7 @@
 .infoBox {
 	width: calc(100% - 60px);
 	height: calc(100% - 20px);
-  background-color: #ffffff;
+  	background-color: #ffffff;
 	border-radius: 8px;
 	margin: 0 10px;
 	padding: 20px;
@@ -78,14 +78,16 @@
 }
 .spending {
 	width: calc(100% - 60px);
-	height: calc(100% - 40px);
+	height: calc(220px);
+	max-height: calc(220px);
+	overflow-y: auto;
 	background-color: #ffffff;
 	border-radius: 8px;
 	margin: 0 10px;
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: start;
 	align-items: center;
 }
 .spendingOutframe {

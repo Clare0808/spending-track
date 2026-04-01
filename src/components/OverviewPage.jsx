@@ -1,5 +1,7 @@
 import style from "./OverviewPage.module.css"
 
+import PayElement from "./payElement"
+
 import pieChart	from "../assets/piechart.png"
 import lineChart from "../assets/linechart.png"
 
@@ -38,36 +40,8 @@ function OverViewPage () {
 				</div>
 				<div className={style.eleFrameSpending}>
 					<div className={style.spending}>
-						<div className={style.spendingOutframe}>
-							<div className={style.spendingBox}>
-								<SiMealie className={style.icon} />
-								<div className={style.spendingInfo}>
-									<div className={style.spendingTitle}>Dinner</div>
-									<div className={style.spendingDate}>2026-03-28</div>
-								</div>
-							</div>
-							<div className={style.spendingPrice}>NT$200</div>
-						</div>
-						<div className={style.spendingOutframe}>
-							<div className={style.spendingBox}>
-								<FaCarAlt className={style.icon} />
-								<div className={style.spendingInfo}>
-									<div className={style.spendingTitle}>Car Expense</div>
-									<div className={style.spendingDate}>2026-03-28</div>
-								</div>
-							</div>
-							<div className={style.spendingPrice}>NT$200</div>
-						</div>
-						<div className={style.spendingOutframe}>
-							<div className={style.spendingBox}>
-								<FaCarAlt className={style.icon} />
-								<div className={style.spendingInfo}>
-									<div className={style.spendingTitle}>Car Expense</div>
-									<div className={style.spendingDate}>2026-03-28</div>
-								</div>
-							</div>
-							<div className={style.spendingPrice}>NT$200</div>
-						</div>
+						<PayElement />
+						<PayElement />
 					</div>
 					<div className={style.chartFrame}>
 						<div className={style.chartTitle}>支出分布</div>

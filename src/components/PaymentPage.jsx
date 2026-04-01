@@ -1,58 +1,22 @@
-import style from "./PaymentPage.module.css";
+import style from "./PaymentPage.module.css"
 
-import { SiMealie } from "react-icons/si";
-import { FaCarAlt } from "react-icons/fa";
-import { IoSchool } from "react-icons/io5";
-import { FaCalendar } from "react-icons/fa";
-import { FaCheck } from "react-icons/fa";
+import PayElement from "./payElement"
+
+import { SiMealie } from "react-icons/si"
+import { FaCarAlt } from "react-icons/fa"
+import { IoSchool } from "react-icons/io5"
+import { FaCalendar } from "react-icons/fa"
+import { FaCheck } from "react-icons/fa"
 
 function PaymentPage () {
 	return (
 		<>
 			<div className={style.page}>
 				<div className={style.spending}>
-					<div className={style.spendingOutframe}>
-						<div className={style.spendingBox}>
-							<SiMealie className={style.icon} />
-							<div className={style.spendingInfo}>
-								<div className={style.spendingTitle}>Dinner</div>
-								<div className={style.spendingTime}>2026-03-28</div>
-							</div>
-						</div>
-						<div className={style.spendingPrice}>NT$200</div>
-					</div>
-					<div className={style.spendingOutframe}>
-						<div className={style.spendingBox}>
-							<FaCarAlt className={style.icon} />
-							<div className={style.spendingInfo}>
-								<div className={style.spendingTitle}>Car Expense</div>
-								<div className={style.spendingTime}>2026-03-28</div>
-							</div>
-						</div>
-						<div className={style.spendingPrice}>NT$200</div>
-					</div>
-					<div className={style.spendingOutframe}>
-						<div className={style.spendingBox}>
-							<SiMealie className={style.icon} />
-							<div className={style.spendingInfo}>
-								<div className={style.spendingTitle}>Dinner</div>
-								<div className={style.spendingTime}>2026-03-28</div>
-							</div>
-						</div>
-						<div className={style.spendingPrice}>NT$200</div>
-					</div>
+					<PayElement />
 				</div>
 				<div className={style.dataInputFrame}>
-					<div className={style.createSpendingOutframe}>
-						<div className={style.spendingBox}>
-							<SiMealie className={style.icon} />
-							<div className={style.spendingInfo}>
-								<div className={style.spendingTitle}>Dinner</div>
-								<div className={style.spendingTime}>2026-03-28</div>
-							</div>
-						</div>
-						<div className={style.spendingPrice}>NT$200</div>
-					</div>
+					<PayElement className={style.createSpendingOutframe} />
 					<div className={style.typeBox}>
 						<div className={style.type}>收入</div>
 						<div className={style.type}>支出</div>
@@ -85,8 +49,9 @@ function PaymentPage () {
 										<div className={style.calculaterOperator}>*</div>
 									</div>
 									<div className={style.calculaterLine}>
-										<div className={style.calculaterEle}>.</div>
-										<div className={style.calculaterZero}>0</div>
+										<div className={style.calculaterOperator}>x</div>
+										<div className={style.calculaterEle}>0</div>
+										<div className={style.calculaterOperator}>=</div>
 										<div className={style.calculaterOperator}>/</div>
 									</div>
 								</div>

@@ -25,12 +25,12 @@ function ChartPage () {
 				</div>
 				<div className={style.infoOutFrame}>
 					<img src={lineChart} className={style.lineChart} />
+					<div className={style.totalInfoBox}>
+						<div className={style.option}>總額</div>
+						<div className={style.info}>-NT$5, 239</div>
+						<div className={style.info}>NT$17,543</div>
+					</div>
 					<div className={style.infoFrame}>
-						<div className={style.infoBox}>
-							<div className={style.option}>總額</div>
-							<div className={style.info}>-NT$5, 239</div>
-							<div className={style.info}>NT$17,543</div>
-						</div>
 						<div className={style.infoBox}>
 							<div className={style.option}>
 								<FaCalendar className={style.optionIcon} />

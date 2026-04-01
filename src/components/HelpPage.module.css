@@ -44,13 +44,14 @@
 	max-height: 180px;
 	overflow-y: auto;
 	border-right: 6px dotted #3e2522;
-	padding-top: 40px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: start;
 	align-items: start;
 }
 .contactInFrame {
+	height: 220px;
+	max-height: 220px;
 	border: none;
 }
 .problemBox,
