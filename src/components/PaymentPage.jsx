@@ -9,6 +9,10 @@ import { FaCalendar } from "react-icons/fa"
 import { FaCheck } from "react-icons/fa"
 
 function PaymentPage () {
+	const clickBtn = (item) => {
+		console.log(item);
+	};
+
 	return (
 		<>
 			<div className={style.page}>
@@ -31,28 +35,28 @@ function PaymentPage () {
 							<div className={style.btnFrame}>
 								<div className={style.calculaterFrame}>
 									<div className={style.calculaterLine}>
-										<div className={style.calculaterEle}>1</div>
-										<div className={style.calculaterEle}>2</div>
-										<div className={style.calculaterEle}>3</div>
-										<div className={style.calculaterOperator}>+</div>
+										<div className={style.calculaterEle} onClick={() => clickBtn("1")}>1</div>
+										<div className={style.calculaterEle} onClick={() => clickBtn("2")}>2</div>
+										<div className={style.calculaterEle} onClick={() => clickBtn("3")}>3</div>
+										<div className={style.calculaterOperator} onClick={() => clickBtn("+")}>+</div>
 									</div>
 									<div className={style.calculaterLine}>
-										<div className={style.calculaterEle}>4</div>
-										<div className={style.calculaterEle}>5</div>
-										<div className={style.calculaterEle}>6</div>
-										<div className={style.calculaterOperator}>-</div>
+										<div className={style.calculaterEle} onClick={() => clickBtn("4")}>4</div>
+										<div className={style.calculaterEle} onClick={() => clickBtn("5")}>5</div>
+										<div className={style.calculaterEle} onClick={() => clickBtn("6")}>6</div>
+										<div className={style.calculaterOperator} onClick={() => clickBtn("-")}>-</div>
 									</div>
 									<div className={style.calculaterLine}>
-										<div className={style.calculaterEle}>7</div>
-										<div className={style.calculaterEle}>8</div>
-										<div className={style.calculaterEle}>9</div>
-										<div className={style.calculaterOperator}>*</div>
+										<div className={style.calculaterEle} onClick={() => clickBtn("7")}>7</div>
+										<div className={style.calculaterEle} onClick={() => clickBtn("8")}>8</div>
+										<div className={style.calculaterEle} onClick={() => clickBtn("9")}>9</div>
+										<div className={style.calculaterOperator} onClick={() => clickBtn("*")}>*</div>
 									</div>
 									<div className={style.calculaterLine}>
-										<div className={style.calculaterOperator}>x</div>
-										<div className={style.calculaterEle}>0</div>
-										<div className={style.calculaterOperator}>=</div>
-										<div className={style.calculaterOperator}>/</div>
+										<div className={style.calculaterOperator} onClick={() => clickBtn("x")}>x</div>
+										<div className={style.calculaterEle} onClick={() => clickBtn("0")}>0</div>
+										<div className={style.calculaterOperator} onClick={() => clickBtn("=")}>=</div>
+										<div className={style.calculaterOperator} onClick={() => clickBtn("/")}>/</div>
 									</div>
 								</div>
 								<div className={style.optionsBox}>
@@ -73,7 +77,6 @@ function PaymentPage () {
 						</div>
 						<FaCheck className={style.checkIcon} />
 					</div>
-					
 				</div>
 			</div>
 		</>
