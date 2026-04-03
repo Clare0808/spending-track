@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 import style from "./PaymentPage.module.css"
 
 import PayElement from "./payElement"
@@ -9,8 +11,73 @@ import { FaCalendar } from "react-icons/fa"
 import { FaCheck } from "react-icons/fa"
 
 function PaymentPage () {
+	const [result, setResult] = useState(0);
+	const [calEle, setCalEle] = useState("");
+	const [lastOpe, setLastOpe] = useState("");
+
 	const clickBtn = (item) => {
-		console.log(item);
+		if (item === "+") {
+			setResult((prev) => prev + parseInt(calEle))
+
+			setCalEle("");
+			setLastOpe("+");
+		} else if (item === "-") {
+			setResult((prev) => {
+				if (prev === 0) {
+					return parseInt(calEle);
+				} else {
+					return prev - parseInt(calEle)
+				}
+			});
+
+			setCalEle("");
+			setLastOpe("-");
+		} else if (item === "*") {
+			setResult((prev) => {
+				if (prev === 0) {
+					return 1;
+				} else {
+					return prev * parseInt(calEle);
+				}
+			});
+
+			setCalEle("");
+			setLastOpe("*");
+		} else if (item === "/") {
+			setResult((prev) => {
+				if (prev === 0) {
+					return parseInt(calEle);
+				} else {
+					return prev / parseInt(calEle);
+				}
+			});
+
+			setCalEle("");
+			setLastOpe("/");
+		} else if (item === "=") {
+			const num = parseInt(calEle || "0");
+
+			setResult((prev) => {
+				if (lastOpe === "+") {
+					return prev + num;
+				} else if (lastOpe === "-") {
+					return prev - num;
+				} else if (lastOpe === "*") {
+					return prev * num;
+				} else if (lastOpe === "/") {
+					return prev / num;
+				} else {
+					return num;
+				}
+			})
+
+			setCalEle("");
+		} else if (item === "x") {
+			setResult(0);
+			setCalEle("");
+		} else {
+			setCalEle((prev) => prev + item);
+		}
 	};
 
 	return (
@@ -30,7 +97,13 @@ function PaymentPage () {
 						<div className={style.inputInFrame}>
 							<div className={style.inputBox}>
 								<input type="text" placeholder="請輸入內容..." className={style.input} />
-								<input type="text" placeholder="請輸入金額..." className={style.input} />
+								<input
+									type="text"
+									placeholder="請輸入金額..."
+									className={style.input}
+									value={calEle || result}
+									readOnly
+								/>
 							</div>
 							<div className={style.btnFrame}>
 								<div className={style.calculaterFrame}>
