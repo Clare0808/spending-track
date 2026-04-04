@@ -216,3 +216,46 @@
 	margin: 5px 0;
 	margin-top: 20px;
 }
+.activeType {
+	width: 50%;
+	color: #ffffff;
+	font-size: 18px;
+	background-color: #d3a376;
+	text-align: center;
+	border: 1px solid #d3a376;
+	border-radius: 12px;
+	padding: 10px;
+	margin: 0 10px;
+	transition: all 0.3s ease;
+}
+.active {
+	width: 60px;
+	height: 60px;
+	color: #ffffff;
+	background-color: #d3a376;
+	font-size: 20px;
+	text-align: center;
+	line-height: 60px;
+	border: 1px solid #d3a376;
+	border-radius: 50%;
+	margin: 0 10px;
+	transition: all 0.3s ease;
+}
+.activeOption {
+	width: calc(100% - 20px);
+	color: #ffffff;
+	font-size: 18px;
+	background-color: #d3a376;
+	text-align: center;
+	border: 1px solid #d3a376;
+	border-radius: 12px;
+	padding: 10px;
+	margin: 0 10px;
+	margin-bottom: 10px;
+	transition: all 0.3s ease;
+}
+.activeOptionIcon {
+	color: #ffffff;
+	font-size: 18px;
+	margin-right: 5px;
+}
