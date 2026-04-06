@@ -132,7 +132,7 @@
 	color: #6a9158;
 }
 .inputInFrame {
-	width: calc(85% - 20px);
+	width: calc(100% - 30px);
 	margin: 0 10px;
 	display: flex;
 	flex-direction: column;

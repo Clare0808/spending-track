@@ -19,6 +19,12 @@ function PaymentPage () {
 	const [selectedType, setSelectedType] = useState(null);
 	const [selectedOpt, setSelectedOpt] = useState(null);
 
+	const [inputText, setInputText] = useState(null);
+	const [iconType, setIconType] = useState("");
+	const [paymentType, setPaymentType] = useState("");
+
+	const [payment, setPayment] = useState([]);
+
 	const clickBtn = (item) => {
 		if (item === "+") {
 			setResult((prev) => {
@@ -105,32 +111,65 @@ function PaymentPage () {
 		}
 	};
 
+	const GetPaymentDate = () => {
+		const date = new Date();
+		const year = String(date.getFullYear());
+		const month = String(date.getMonth() + 1).padStart(2, "0");
+		const day = String(date.getDate()).padStart(2, "0");
+
+		return year + "-" + month + "-" + day;
+	};
+
 	return (
 		<>
 			<div className={style.page}>
 				<div className={style.spending}>
-					<PayElement />
+					{payment.map((p, index) => (
+						<PayElement
+							key={index}
+							result={p.price}
+							inputText={p.text}
+							iconType={p.icon}
+							paymentType={p.type}
+							paymentDate={p.date}
+						/>
+					))}
 				</div>
 				<div className={style.dataInputFrame}>
 					<PayElement
 						className={style.createSpendingOutframe}
 						result={result}
+						inputText={inputText}
+						iconType={iconType}
+						paymentType={paymentType}
+						paymentDate={GetPaymentDate()}
 					/>
 					<div className={style.typeBox}>
 						<div
 							className={selectedType === "收入" ? style.activeType : style.type}
-							onClick={() => setSelectedType("收入")}
+							onClick={() => {
+								setSelectedType("收入")
+								setPaymentType("收入")
+							}}
 						>收入</div>
 						<div
 							className={selectedType === "支出" ? style.activeType : style.type}
-							onClick={() => setSelectedType("支出")}
+							onClick={() => {
+								setSelectedType("支出")
+								setPaymentType("支出")
+							}}
 						>支出</div>
 					</div>
 					<div className={style.inputFrame}>
-						<FaCalendar className={style.calendarIcon} />
 						<div className={style.inputInFrame}>
 							<div className={style.inputBox}>
-								<input type="text" placeholder="請輸入內容..." className={style.input} />
+								<input
+									type="text"
+									placeholder="請輸入內容..."
+									className={style.input}
+									value={inputText}
+									onChange={(e) => setInputText(e.target.value)}
+								/>
 								<input
 									type="text"
 									placeholder="請輸入金額..."
@@ -194,21 +233,30 @@ function PaymentPage () {
 								<div className={style.optionsBox}>
 									<div
 										className={selectedOpt === "餐飲" ? style.activeOption : style.option}
-										onClick={() => setSelectedOpt("餐飲")}
+										onClick={() => {
+											setSelectedOpt("餐飲")
+											setIconType("meal")
+										}}
 									>
 										<SiMealie className={selectedOpt === "餐飲" ? style.activeOptionIcon : style.optionIcon} />
 										餐飲
 									</div>
 									<div 
 										className={selectedOpt === "交通" ? style.activeOption : style.option}
-										onClick={() => setSelectedOpt("交通")}
+										onClick={() => {
+											setSelectedOpt("交通")
+											setIconType("transport")
+										}}
 									>
 										<FaCarAlt className={selectedOpt === "交通" ? style.activeOptionIcon : style.optionIcon} />
 										交通
 									</div>
 									<div 
 										className={selectedOpt === "教育" ? style.activeOption : style.option}
-										onClick={() => setSelectedOpt("教育")}
+										onClick={() => {
+											setSelectedOpt("教育")
+											setIconType("education")
+										}}
 									>
 										<IoSchool className={selectedOpt === "教育" ? style.activeOptionIcon : style.optionIcon} />
 										教育
@@ -216,7 +264,28 @@ function PaymentPage () {
 								</div>
 							</div>
 						</div>
-						<FaCheck className={style.checkIcon} />
+						<FaCheck 
+							className={style.checkIcon}
+							onClick={() => {
+								GetPaymentDate();
+
+								const newPayment = {
+									text: inputText,
+									price: result,
+									icon: iconType,
+									type: paymentType,
+									date: GetPaymentDate()
+								}
+
+								setPayment((prev) => [...prev, newPayment]);
+
+								setResult(0);
+								setCalEle("");
+								setInputText("");
+								setSelectedOpt(null);
+								setSelectedType(null);
+							}}
+						/>
 					</div>
 				</div>
 			</div>
