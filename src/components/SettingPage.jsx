@@ -1,12 +1,26 @@
+import { useState, useRef } from "react"
+import { CSSTransition } from "react-transition-group";
+
 import style from "./SettingPage.module.css"
 
-import userImage	from "../assets/user.jpg"
+import ModifyBudget from "./ModifyBudget"
+
+import userImage from "../assets/user.jpg"
 
 import { SiMealie } from "react-icons/si"
 import { FaCarAlt } from "react-icons/fa"
 import { IoSchool } from "react-icons/io5"
 
 function SettingPage () {
+	const [showEle, setShowEle] = useState(false);
+	const [budget, setBudget] = useState("NT$ 5,000");
+
+	const nodeRef = useRef(null);
+
+	const handleShowEle = (data) => {
+		setShowEle(data);
+	};
+
 	return (
 		<>
 			<div className={style.page}>
@@ -58,8 +72,8 @@ function SettingPage () {
 				<div className={style.settingBox}>
 					<div className={style.budgetManage}>
 						<div className={style.manageTitle}>預算設定</div>
-						<div className={style.budget}>NT$50,000</div>
-						<div className={style.budgetModifyBtn}>修改預算</div>
+						<div className={style.budget}>{budget}</div>
+						<div className={style.budgetModifyBtn} onClick={() => handleShowEle(true)}>修改預算</div>
 					</div>
 					<div className={style.remindBox}>
 						<div className={style.manageTitle}>提醒時間設定</div>
@@ -68,6 +82,28 @@ function SettingPage () {
 					</div>
 				</div>
 				</div>
+
+				{showEle ? <div className={style.overlay} onClick={() => handleShowEle(false)}></div> : null}
+				<CSSTransition
+					nodeRef={nodeRef}
+					in={showEle}
+					timeout={300}
+					classNames={{
+						enter: style.fadeEnter,
+						enterActive: style.fadeEnterActive,
+						exit: style.fadeExit,
+						exitActive: style.fadeExitActive,
+					}}
+					unmountOnExit
+				>
+					<div className={style.pageEle} ref={nodeRef}>
+						<ModifyBudget 
+							handleShowEle={handleShowEle}
+							handleBudget={setBudget} 
+							budget={budget}
+						/>
+					</div>
+				</CSSTransition>
 			</div>
 		</>
 	)
